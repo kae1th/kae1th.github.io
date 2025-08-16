@@ -29,13 +29,4 @@ body::before {
 }
 
 
-/* 2、强制默认黑色模式 */
-/* 覆盖主题默认的浅色模式 */
-:root {
-  --global-bg: #0d1117 !important; /* 全局背景（深黑） */
-  --card-bg: #161b22 !important; /* 卡片背景 */
-  --text-color: #e6edf3 !important; /* 文字颜色（浅灰） */
-}
 
-/* 确保深色模式标识正确 */
-document.documentElement.setAttribute('data-theme', 'dark');
