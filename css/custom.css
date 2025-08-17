@@ -28,5 +28,50 @@ body::before {
   background: transparent !important; /* 让 Footer 背景透明，显示底层背景图 */
 }
 
+/* 导航栏深色模式按钮样式 */
+#nav-darkmode-toggle {
+  background: transparent;
+  border: none;
+  color: var(--font-color);
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 0 10px;
+  margin: 0 5px;
+}
+
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  #nav-darkmode-toggle {
+    font-size: 0.9rem;
+    margin: 0 5px;
+  }
+}
+
+/* 浅色模式（默认，无 data-theme 属性） */
+body {
+  background-color: #fff !important;
+  color: #333 !important;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* 深色模式（有 data-theme="dark" 属性） */
+[data-theme="dark"] body {
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
+}
+
+/* 导航栏样式适配 */
+#nav {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+[data-theme="dark"] #nav {
+  background-color: rgba(18, 18, 18, 0.8) !important;
+}
+
+/* 按钮图标切换动画 */
+#nav-darkmode-toggle .fa-sun { display: none; } /* 浅色模式隐藏太阳 */
+[data-theme="dark"] #nav-darkmode-toggle .fa-moon { display: none; } /* 深色模式隐藏月亮 */
+[data-theme="dark"] #nav-darkmode-toggle .fa-sun { display: inline-block; } /* 深色模式显示太阳 */
 
 
